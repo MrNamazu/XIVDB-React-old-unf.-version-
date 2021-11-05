@@ -4,19 +4,6 @@ import i18next from "i18next";
 
 import "../../../node_modules/flag-icon-css/css/flag-icons.min.css"
 
-const languages = [
-	{
-		code: 'en',
-		name: 'English',
-		country_code: 'gb'
-	},
-	{
-		code: 'de',
-		name: 'Deutsch',
-		country_code: 'de'
-	},
-]
-
 const Navigation = () => {
   const [lngdrop, setLngdrop] = useState(false);
 
@@ -43,9 +30,6 @@ const Navigation = () => {
         </li>
         <li className="nav-Item">
           <Link to="/database">Database</Link>
-        </li>
-        <li className="nav-Item">
-          <Link to="/guides">Guides</Link>
         </li>
         <li className="nav-lng" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <span><i class="fas fa-globe-americas" style={{marginRight:"5px"}}></i><i class="fas fa-caret-down"></i></span>
