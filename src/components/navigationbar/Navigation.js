@@ -21,7 +21,8 @@ const Navigation = () => {
     } else {
       setLngdrop(false);
     }
-  };
+  }
+  
   return (
     <>
       <ul className="nav-menu">
