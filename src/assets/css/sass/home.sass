@@ -1,0 +1,117 @@
+$yellow: #eaac16
+$dark: #20232a
+$light: #2a2e36
+$fulldark: rgba(19,20,24,1)
+
+.homeNewsSortBar span a button, .homeNewsPostContent button, 
+  background-color: $dark
+  border: 0px none
+  padding: 8px 12px
+  border-radius: 5px
+  color: #fff
+  font-family: 'Montserrat', sans-serif
+  font-size: 12px
+  font-weight: 700
+  cursor: pointer
+  transition: 0.2s ease
+  &:not(:first-child) 
+    margin-left: 5px
+  &:hover:enabled
+    background-color: $yellow
+    color: $dark
+    transition: 0.2s ease
+  &:disabled
+    opacity: 0.3
+    color: #6e6e6e
+    text-decoration-line: line-through
+
+.homeContainerWrapper
+  display: flex
+  & > div:nth-child(1)
+    width: 75%
+    margin-right: 10px
+    background-color: $dark
+    padding: 10px
+  & > div:nth-child(2)
+    width: 25%
+    background-color: $dark
+    padding: 10px
+
+.homeNewsSortBar
+  background-color: $light
+  padding: 10px 20px
+  & span
+    margin-right: 10px
+  & span a 
+    color: #FFF
+    text-decoration: none
+
+.homeNewsPost
+  background-color: $light
+  margin-top: 10px
+  padding: 10px
+  display: flex
+  & .homeNewsPostImage
+    height: 175px
+    min-width: 350px
+    background-color: $dark
+    border: 5px solid $yellow
+    transition: 0.2s ease
+    &::after
+      content: "FFXIV | News"
+      background-color: $yellow
+      padding: 3px 10px
+      position: relative
+      top: 5px
+      left: -4px
+      color: $dark
+      font-weight: 800
+      font-size: 12px
+  & .homeNewsPostContent
+    margin-left: 10px
+    position: relative
+    width: 100%
+    & > p
+      font-weight: 600
+      font-size: 17px
+      text-transform: uppercase
+    & .homeNewsPostDates span
+      font-size: 12px
+      margin-right: 5px
+    & .homeNewsPostDesc 
+      margin-top: 10px
+    & button 
+      position: absolute
+      bottom: 0
+      width: 100%
+      &:not(:first-child) 
+        margin-left: 0px
+
+.homeNewsLoadMoreNews
+  width: 100%
+  display: flex
+  text-decoration: none
+  justify-content: center
+  margin-top: 20px
+.homeNewsLoadMoreNews button
+  background-color: $light
+  border: 0px none
+  padding: 15px 12px
+  border-radius: 5px
+  width: 100%
+  color: #fff
+  font-family: 'Montserrat', sans-serif
+  font-size: 12px
+  font-weight: 700
+  cursor: pointer
+  transition: 0.2s ease
+  &:not(:first-child) 
+    margin-left: 5px
+  &:hover:enabled
+    background-color: $yellow
+    color: $dark
+    transition: 0.2s ease
+  &:disabled
+    opacity: 0.3
+    color: #6e6e6e
+    text-decoration-line: line-through

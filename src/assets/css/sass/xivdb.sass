@@ -1,0 +1,173 @@
+$yellow: #eaac16
+$dark: #20232a
+$light: #2a2e36
+$fulldark: rgba(19,20,24,1)
+
+*
+  margin: 0
+  padding: 0 
+  box-sizing: border-box
+
+body
+  margin: 0
+  padding: 0
+  background-color: $dark
+  font-family: 'Montserrat'
+  color: #FFF
+
+.LoadingScreen 
+  color: #FFF
+  background-color: $dark
+  position: absolute
+  height: 100vh
+  width: 100%
+  display: flex
+
+.LoadingScreen h2
+  justify-content: center
+  align-items: center
+  text-transform: uppercase
+  height: 100vh
+  width: 100%
+  text-align: center
+
+/* ALLGEMEIN */
+.wrapper
+  width: 80%
+
+/* MAIN CONTENT */
+.mainContent .wrapper
+  margin: auto
+  display: flex
+  justify-content: space-between
+  position: relative
+
+.mainContentBox
+  width: 100%
+  background-color: #2a2e36
+  border: 5px solid #20232a
+  box-shadow: 0 0 2px #000
+  padding: 20px
+
+/* SCROLLBAR */
+::-webkit-scrollbar 
+  width: 7px
+::-webkit-scrollbar-track 
+  background: $fulldark
+  border-radius: 20px
+::-webkit-scrollbar-thumb
+  background: $yellow
+  border-radius: 20px
+  width: 5px
+
+/* SPINNER */
+
+.loading2 
+  width: 100px
+  height: 100px
+  border-radius: 50%
+  border-top: 8px solid
+  border-color: $yellow transparent
+  animation: spin 1s linear infinite
+  margin: 0 auto
+  margin-top: 200px
+@keyframes spin 
+  0% 
+    transform: rotate(0deg)   
+  100% 
+    transform: rotate(359deg) 
+
+/* HEADER */
+
+.st0 
+  fill: $dark
+#Ebene_1
+  height: 400px
+
+#headerBackground
+  background-image: url('../../../assets/img/clouds.png')
+  background-repeat: repeat-x
+  height: 400px
+  width: 100%
+  background-size: cover
+  animation: bgScrollLeft 250s linear infinite
+  position: absolute
+  z-index: -1
+@keyframes bgScrollLeft 
+  from 
+    background-position: 3000px 0  
+  to 
+    background-position: -3000px 0
+
+#headerSecondBackground
+  background-image: url('../../../assets/img/bg.svg')
+  background-repeat: no-repeat
+  background-size: cover
+  height: 800px
+  width: 100%
+#logo 
+  background-image: url('../../../assets/img/logo.svg')
+  height: 150px
+  width: 242px
+  background-repeat: no-repeat
+  margin-bottom: 20px
+  transition: 0.5s
+  &:hover   
+    filter: drop-shadow(0px 0px 15px $dark)
+    transition: 0.5s
+    transform: scale(1.03)
+#header
+  position: relative
+  z-index: 1
+  height: 350px
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+.search-container
+  width: 500px
+  display: flex
+  margin: 0 auto
+.search-container a
+  text-decoration: none
+  color: $yellow
+  position: relative
+  right: 30px
+.search-container a:after
+  font-family: "Font Awesome 5 Free"
+  font-weight: 900
+  line-height: 45px
+  content: "   \f002"
+input#search-bar
+  margin: 0 auto
+  width: 100%
+  height: 45px 
+  padding: 0 20px
+  font-size: 13px
+  border: 3px solid $dark
+  outline: none
+  background-color: $light
+  text-transform: uppercase
+  &:focus
+    border: 3px solid $yellow
+    transition: 0.35s ease
+    color: $yellow
+    &::-webkit-input-placeholder
+        transition: opacity 0.45s ease
+        opacity: 0
+    &::-moz-placeholder 
+      transition: opacity 0.45s ease
+      opacity: 0
+    &:-ms-placeholder 
+      transition: opacity 0.45s ease
+      opacity: 0
+
+@media screen and (max-width: 1250px) 
+  #header
+    display: none
+  .mainContent .wrapper
+    width: 100%
+  .mainContentBox
+    box-shadow: none
+    border: 0px
+    padding: 0px
