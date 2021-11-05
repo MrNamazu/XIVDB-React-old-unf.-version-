@@ -13,7 +13,7 @@ const Navigation = () => {
     } else {
       setLngdrop(true);
     }
-  };
+  }
 
   const onMouseLeave = () => {
     if (window.innerWidth < 1250) {
@@ -22,7 +22,7 @@ const Navigation = () => {
       setLngdrop(false);
     }
   }
-  
+
   return (
     <>
       <ul className="nav-menu">
