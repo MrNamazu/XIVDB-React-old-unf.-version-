@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom"
 import i18next from "i18next";
+import { useTranslation } from "react-i18next";
 
 import "../../../node_modules/flag-icon-css/css/flag-icons.min.css"
 
 const Navigation = () => {
+  const { t } = useTranslation();
   const [lngdrop, setLngdrop] = useState(false);
 
   const onMouseEnter = () => {
@@ -27,13 +29,13 @@ const Navigation = () => {
     <>
       <ul className="nav-menu">
         <li className="nav-Item">
-          <Link to="/">Home</Link>
+          <Link to="/">{t("home")}</Link>
         </li>
         <li className="nav-Item">
-          <Link to="/database">Database</Link>
+          <Link to="/database">{t("database")}</Link>
         </li>
         <li className="nav-lng" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-          <span><i class="fas fa-globe-americas" style={{marginRight:"5px"}}></i><i class="fas fa-caret-down"></i></span>
+          <span><i className="fas fa-globe-americas" style={{marginRight:"5px"}}></i><i className="fas fa-caret-down"></i></span>
           {lngdrop && 
           <ul>
             <li onClick={() => i18next.changeLanguage("de")}><i className="flag-icon flag-icon-de"/></li>
