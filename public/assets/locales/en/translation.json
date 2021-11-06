@@ -1,4 +1,10 @@
 {
+  "ffNews": "FFXIV News",
+  "ffEvent": "FFXIV Events",
+  "ffUpdates": "FFXIV Update",
+  "xivNews": "XIVDB.org News",
+  "xivUpdates": "XIVDB.org Update",
+
   "strength": "Strength",
   "vitality": "Vitality",
   "directhitrate": "Direct Hit",
@@ -34,7 +40,7 @@
   "job": "Job",
   
   "Durability": "Durability",
-  "Progress": "Progress",
+  "Difficulty": "Difficulty",
   "Quality": "Quality",
   
   "craftsmanship": "Craftsmanship",
@@ -126,5 +132,5 @@
   "crystals": "Crystals",
   "ingredients": "Ingredients",
 
-  "craftingfor": "Recipe for:"
+  "craftingfor": "Recipe"
 }

@@ -38,7 +38,7 @@ const News = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${process.env.REACT_APP_ACCESS_TOKEN}`,
+          Authorization: `Bearer vssdG69CD8Xc1GNWkvo611ZBqtwQ0h2OaKhDR4_fiqs`,
         },
         body: JSON.stringify({ query }),
       })
@@ -52,13 +52,19 @@ const News = () => {
   }, [t]);
     
 
-  const newsblogs = []
+  const newsblocks = []
   for (let i in page) {
-    newsblogs.push(<NewsPost key={i} author={page[i].author} newssum={page[i].newsSummary} newstitle={page[i].title} newsimg={page[i].titleimage.url} />)
-  }
-
-  if (!page) {
-    return "Loading...";
+    newsblocks.push(
+        <NewsPost 
+          key={i} 
+          author={page[i].author} 
+          newssum={page[i].newsSummary} 
+          newstitle={page[i].title} 
+          newsimg={page[i].titleimage?.url} 
+          newscategory={page[i].contentfulMetadata?.tags[0].id}
+          date={page[i].published} 
+        />
+      )
   }
 
   return (
@@ -70,7 +76,7 @@ const News = () => {
       <span><Link to="#"><button><i className="fas fa-calendar-alt"></i> Events</button></Link></span>
       <span><Link to="#"><button><i className="fas fa-list"></i> Patch Notes</button></Link></span>
     </div>
-    {newsblogs}
+    {newsblocks}
     <Link to="/" className="homeNewsLoadMoreNews"><button>Mehr Laden</button></Link>
   </div>
   )

@@ -66,7 +66,7 @@
 .databaseContentIcon {
   height: 150px;
   width: 150px;
-  outline: 6px solid #131418;
+  outline: 6px solid #eaac16;
   outline-offset: -5px;
   margin-right: 15px;
   background-color: #131418;
@@ -137,7 +137,7 @@
 
 .databaseContentSidebarInfoTitle {
   color: #fff;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800; }
 
 .databaseContentSidebarInfoOutcome {
@@ -246,12 +246,12 @@
   background-color: #20232a; }
 
 .databaseLootTableCraftingIcon {
-  height: 80px;
-  width: 80px;
+  height: 90px;
+  width: 90px;
   margin-right: 10px;
   background-size: cover;
   background-color: #131418;
-  outline: 5px solid #131418;
+  outline: 5px solid #eaac16;
   outline-offset: -3px; }
 
 .databaseLootTableCraftingHeader {
@@ -265,9 +265,10 @@
 
 .databaseLootTableCraftingTitle {
   color: #fff;
-  text-transform: uppercase;
   font-size: 16px;
-  font-weight: 600; }
+  font-weight: 600;
+  background: linear-gradient(90deg, #131418 10%, rgba(0, 0, 0, 0) 100%);
+  padding: 5px 10px; }
 
 .databaseLootTableCraftingClassRequirements {
   display: inline-flex;

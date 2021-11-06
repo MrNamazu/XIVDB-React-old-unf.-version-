@@ -14,12 +14,12 @@ const DatabaseCraftingRecipe = ({recipe}) => {
   useEffect(() => {
     const fetchItems = async () => {
       setIsLoading(true)
-      const result = await axios(`https://xivapi.com/recipe/${recipe?.[0]}`)
+      const result = await axios(`https://xivapi.com/recipe/${recipe?.[0]}?language=${t('lng')}`)
       setData(result.data)
       setIsLoading(false)
     }
     fetchItems()
-  }, [recipe])
+  }, [recipe, t])
 
   const DurabilityStat = Data.RecipeLevelTable?.Durability*Data.DurabilityFactor/100
   const DifficultyStat = Data.RecipeLevelTable?.Difficulty*Data.DifficultyFactor/100
@@ -36,7 +36,7 @@ const DatabaseCraftingRecipe = ({recipe}) => {
           <div className="databaseLootTableCraftingHeaderWrapper">
             <div className="databaseLootTableCraftingIcon" style={{backgroundImage: `url(https://xivapi.com/${Data.Icon})` }}></div>
             <div className="databaseLootTableCraftingHeaderContent">
-              <div className="databaseLootTableCraftingTitle"><span style={{fontWeight:"400"}}>{t("craftingfor")}</span> {Data.Name_en}</div>
+              <div className="databaseLootTableCraftingTitle"><span style={{fontWeight:"700", color:"#eaac16", textTransform:"uppercase"}}>{t("craftingfor")}:</span> {Data.Name}</div>
               <div style={{display:'flex'}}>
                 <div className="databaseLootTableCraftingClassRequirements">
                   <img alt={Data.Name_en} src={`https://xivapi.com${Data.ClassJob.Icon}`} />
@@ -54,8 +54,8 @@ const DatabaseCraftingRecipe = ({recipe}) => {
               {Data.SecretRecipeBook !== null &&
               <Link style={{textDecoration:"none"}} to={`/database/item/${Data.SecretRecipeBook?.ItemTargetID}`}>
                 <div className="databaseLootTableCraftingItemRequirements">
-                  <img alt={Data.SecretRecipeBook?.Name_en}src={`https://xivapi.com${Data.SecretRecipeBook?.Item.IconHD}`}/>
-                  <span>{Data.SecretRecipeBook?.Name_en}</span>
+                  <img alt={Data.SecretRecipeBook?.Name}src={`https://xivapi.com${Data.SecretRecipeBook?.Item.IconHD}`}/>
+                  <span>{Data.SecretRecipeBook?.Name}</span>
                 </div>
               </Link>
               }
@@ -73,13 +73,13 @@ const DatabaseCraftingRecipe = ({recipe}) => {
           <div className="databaseLootTableCraftingCurrencyHeader">{t('crystals')}:</div>
           <div className="databaseLootTableCraftingCurrencyWrapper">
             {Data.ItemIngredient7 !== null &&
-              <div><Link to={`/database/item/${Data.ItemIngredient7.ID}`}><img alt={Data.ItemIngredient7?.Name_en}src={`https://xivapi.com${Data.ItemIngredient7?.IconHD}`}/></Link><span>{Data.AmountIngredient7}x</span></div>
+              <div><Link to={`/database/item/${Data.ItemIngredient7.ID}`}><img alt={Data.ItemIngredient7?.Name}src={`https://xivapi.com${Data.ItemIngredient7?.IconHD}`}/></Link><span>{Data.AmountIngredient7}x</span></div>
             }
             {Data.ItemIngredient8 !== null &&
-              <div><Link to={`/database/item/${Data.ItemIngredient8.ID}`}><img alt={Data.ItemIngredient8?.Name_en}src={`https://xivapi.com${Data.ItemIngredient8?.IconHD}`}/></Link><span>{Data.AmountIngredient8}x</span></div>
+              <div><Link to={`/database/item/${Data.ItemIngredient8.ID}`}><img alt={Data.ItemIngredient8?.Name}src={`https://xivapi.com${Data.ItemIngredient8?.IconHD}`}/></Link><span>{Data.AmountIngredient8}x</span></div>
             }
             {Data.ItemIngredient9 !== null &&
-              <div><Link to={`/database/item/${Data.ItemIngredient9.ID}`}><img alt={Data.ItemIngredient9?.Name_en}src={`https://xivapi.com${Data.ItemIngredient9?.IconHD}`}/></Link><span>{Data.AmountIngredient9}x</span></div>
+              <div><Link to={`/database/item/${Data.ItemIngredient9.ID}`}><img alt={Data.ItemIngredient9?.Name}src={`https://xivapi.com${Data.ItemIngredient9?.IconHD}`}/></Link><span>{Data.AmountIngredient9}x</span></div>
             }
           </div>
         </div>
@@ -88,25 +88,25 @@ const DatabaseCraftingRecipe = ({recipe}) => {
           <div className="databaseLootTableCraftingItemIncWrapper">
 
             {Data.ItemIngredient0 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient0.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient0?.Name_en}src={`https://xivapi.com${Data.ItemIngredient0?.IconHD}`}/><span>{Data.AmountIngredient0}x</span><span>{Data.ItemIngredient0?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient0.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient0?.Name}src={`https://xivapi.com${Data.ItemIngredient0?.IconHD}`}/><span>{Data.AmountIngredient0}x</span><span>{Data.ItemIngredient0?.Name}</span></div></Link>
             }
             {Data.ItemIngredient1 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient1.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient1?.Name_en}src={`https://xivapi.com${Data.ItemIngredient1?.IconHD}`}/><span>{Data.AmountIngredient1}x</span><span>{Data.ItemIngredient1?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient1.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient1?.Name}src={`https://xivapi.com${Data.ItemIngredient1?.IconHD}`}/><span>{Data.AmountIngredient1}x</span><span>{Data.ItemIngredient1?.Name}</span></div></Link>
             }
             {Data.ItemIngredient2 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient2.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient2?.Name_en}src={`https://xivapi.com${Data.ItemIngredient2?.IconHD}`}/><span>{Data.AmountIngredient2}x</span><span>{Data.ItemIngredient2?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient2.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient2?.Name}src={`https://xivapi.com${Data.ItemIngredient2?.IconHD}`}/><span>{Data.AmountIngredient2}x</span><span>{Data.ItemIngredient2?.Name}</span></div></Link>
             }
             {Data.ItemIngredient3 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient3.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient3?.Name_en}src={`https://xivapi.com${Data.ItemIngredient3?.IconHD}`}/><span>{Data.AmountIngredient3}x</span><span>{Data.ItemIngredient3?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient3.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient3?.Name}src={`https://xivapi.com${Data.ItemIngredient3?.IconHD}`}/><span>{Data.AmountIngredient3}x</span><span>{Data.ItemIngredient3?.Name}</span></div></Link>
             }
             {Data.ItemIngredient4 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient4.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient4?.Name_en}src={`https://xivapi.com${Data.ItemIngredient4?.IconHD}`}/><span>{Data.AmountIngredient4}x</span><span>{Data.ItemIngredient4?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient4.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient4?.Name}src={`https://xivapi.com${Data.ItemIngredient4?.IconHD}`}/><span>{Data.AmountIngredient4}x</span><span>{Data.ItemIngredient4?.Name}</span></div></Link>
             }
             {Data.ItemIngredient5 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient5.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient5?.Name_en}src={`https://xivapi.com${Data.ItemIngredient5?.IconHD}`}/><span>{Data.AmountIngredient5}x</span><span>{Data.ItemIngredient5?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient5.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient5?.Name}src={`https://xivapi.com${Data.ItemIngredient5?.IconHD}`}/><span>{Data.AmountIngredient5}x</span><span>{Data.ItemIngredient5?.Name}</span></div></Link>
             }
             {Data.ItemIngredient6 !== null &&
-              <Link to={`/database/item/${Data.ItemIngredient6.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient6?.Name_en}src={`https://xivapi.com${Data.ItemIngredient6?.IconHD}`}/><span>{Data.AmountIngredient6}x</span><span>{Data.ItemIngredient6?.Name_en}</span></div></Link>
+              <Link to={`/database/item/${Data.ItemIngredient6.ID}`}><div className="databaseLootTableCraftingItemIncRow"><img alt={Data.ItemIngredient6?.Name}src={`https://xivapi.com${Data.ItemIngredient6?.IconHD}`}/><span>{Data.AmountIngredient6}x</span><span>{Data.ItemIngredient6?.Name}</span></div></Link>
             }
           </div>
         </div>

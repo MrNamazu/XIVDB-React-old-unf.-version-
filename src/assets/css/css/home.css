@@ -52,8 +52,7 @@
     background-color: #20232a;
     border: 5px solid #eaac16;
     transition: 0.2s ease; }
-    .homeNewsPost .homeNewsPostImage::after {
-      content: "FFXIV | News";
+    .homeNewsPost .homeNewsPostImage > span {
       background-color: #eaac16;
       padding: 3px 10px;
       position: relative;
