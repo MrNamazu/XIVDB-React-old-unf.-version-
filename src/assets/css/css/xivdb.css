@@ -11,6 +11,54 @@ body {
   font-family: "Montserrat";
   color: #FFF; }
 
+.Error {
+  background-color: #462628;
+  border: 3px solid #8f2a34;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  font-size: 14px; }
+  .Error:before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 30px;
+    margin-right: 20px;
+    color: #8f2a34; }
+
+.Success {
+  background-color: #305742;
+  border: 3px solid #3c9e4c;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  font-size: 14px; }
+  .Success:before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 30px;
+    margin-right: 20px;
+    color: #3c9e4c; }
+
+.Warning {
+  background-color: #574d30;
+  border: 3px solid #9e8c3c;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0px;
+  font-size: 14px; }
+  .Warning:before {
+    content: "";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 30px;
+    margin-right: 20px;
+    color: #9e8c3c; }
+
 .LoadingScreen {
   color: #FFF;
   background-color: #20232a;
