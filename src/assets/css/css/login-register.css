@@ -25,8 +25,8 @@
     border: none;
     float: right;
     color: #fff;
-    padding: 10px;
-    font-size: 20px;
+    padding: 10px 15px;
+    font-size: 25px;
     cursor: pointer; }
   .LoginWindow > .LoginForm {
     margin: 20px;
@@ -53,7 +53,7 @@
         .LoginWindow > .LoginForm .form-group input:active {
           outline: 1px solid #eaac16;
           border: 2px sloid #eaac16; }
-      .LoginWindow > .LoginForm .form-group button {
+      .LoginWindow > .LoginForm .form-group > button {
         margin-top: 20px;
         background-color: #131418;
         border: 0px none;
@@ -61,13 +61,15 @@
         border-radius: 5px;
         color: #fff;
         font-family: "Montserrat", sans-serif;
-        font-size: 12px;
+        font-size: 16px;
+        text-transform: uppercase;
         font-weight: 700;
         cursor: pointer;
         transition: 0.2s ease; }
-        .LoginWindow > .LoginForm .form-group button:hover {
+        .LoginWindow > .LoginForm .form-group > button:hover {
           background-color: #eaac16;
-          transition: 0.2s ease; }
+          transition: 0.2s ease;
+          color: #20232a; }
 
 input[type="checkbox"] {
   position: absolute;

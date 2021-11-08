@@ -7,26 +7,29 @@ import Database from "./pages/database"
 import PageNotFound from "./pages/404"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import { AuthProvider } from "./components/navigationbar/Auth/Context/AuthContext"
 
 const XIVDatabase = () => {
   return (
-  <div className='container'>
+    <div className='container'>
       <BrowserRouter>
-        <NavigationBar />
-        <Header />
-        <div className="mainContent">
-          <div className="wrapper">
-            <div className="mainContentBox">
-            <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/database" component={Database}/>
-              <Route exact path="/PageNotFound" component={PageNotFound}/>
-              <Redirect to="/PageNotFound"/>
-            </Switch>
+        <AuthProvider>
+          <NavigationBar />
+          <Header />
+          <div className="mainContent">
+            <div className="wrapper">
+              <div className="mainContentBox">
+                <Switch>
+                  <Route exact path="/" component={Home} />
+                  <Route path="/database" component={Database} />
+                  <Route exact path="/PageNotFound" component={PageNotFound} />
+                  <Redirect to="/PageNotFound" />
+                </Switch>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <Footer />
+          <Footer />
+        </AuthProvider>
       </BrowserRouter>
     </div>
   )

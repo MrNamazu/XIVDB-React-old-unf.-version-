@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useAuth } from './Context/AuthContext'
 
 import UserControlPanelDropDown from "./UserControlPanelDropDown"
 import defaultavatar from "../../../assets/img/default_avatar.png"
@@ -9,6 +10,7 @@ const UserControlPanel = () => {
   const [dropDown, setDropDown] = useState(false);
   const [openLogin, setOpenLogin] = useState(false);
   const [openRegister, setOpenRegister] = useState(false);
+  const { currentUser } = useAuth()
 
   const OpenLogin = () => {
     setOpenLogin(true)
@@ -28,19 +30,21 @@ const UserControlPanel = () => {
 
   return (
     <div className="mainMenuLoginBar">
-      <div className="ucpButtonWrapper">
+
+      { currentUser?.email === undefined &&
+        <div className="ucpButtonWrapper">
           <button onClick={OpenLogin} className="ucpButtons">Login</button>
           {openLogin && <Login openModal={setOpenLogin} />}
           <button onClick={OpenRegister} className="ucpButtons">Register</button>
           {openRegister && <Register openModalR={setOpenRegister} />}
-      </div>
-
-      
+        </div>
+      }
+      { currentUser?.email !== undefined &&
       <div className="ucpCharacter"  onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <div className="ucpCharacterName">
             <div>
               <span>Eingeloggt als</span>
-              <span className="ucpCharacterNamePlate">&nbsp;mail</span>
+              <span className="ucpCharacterNamePlate">&nbsp;{currentUser?.email}</span>
             </div>
             {dropDown && <UserControlPanelDropDown />}
           </div>
@@ -48,7 +52,9 @@ const UserControlPanel = () => {
             <img alt="" src={defaultavatar} />
           </div>
       </div> 
+      }
     </div>
+    
   )
 }
 
