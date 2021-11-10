@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom"
+import PrivateRoute from "./components/misc/PrivateRoute"
 
 import NavigationBar from "./components/navigationbar/NavigationBar"
 
@@ -7,6 +8,8 @@ import Database from "./pages/database"
 import PageNotFound from "./pages/404"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
+import editprofile from "./pages/editprofile"
+import guides from "./pages/guides"
 import { AuthProvider } from "./components/navigationbar/Auth/Context/AuthContext"
 
 const XIVDatabase = () => {
@@ -22,8 +25,12 @@ const XIVDatabase = () => {
                 <Switch>
                   <Route exact path="/" component={Home} />
                   <Route path="/database" component={Database} />
+                  <Route exact path="/guides" component={guides} />
+                  <PrivateRoute exact path="/editprofile" component={editprofile} />
+                  
                   <Route exact path="/PageNotFound" component={PageNotFound} />
                   <Redirect to="/PageNotFound" />
+
                 </Switch>
               </div>
             </div>

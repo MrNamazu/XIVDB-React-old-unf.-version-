@@ -1,0 +1,36 @@
+$yellow: #eaac16
+$dark: #20232a
+$light: #2a2e36
+$fulldark: rgba(19,20,24,1)
+
+.guideClassCard
+  background-color: $dark
+  border: 5px solid $fulldark
+  color: $yellow
+  width: 400px
+  height: 200px
+  border-radius: 13px
+  margin-right: 20px
+  filter: grayscale(0.8)
+  &:hover
+    filter: grayscale(0)
+  & > .paladin
+    background-image: url(../../img/pld_down.png)
+    width: 202px !important
+    background-size: 223px
+    background-repeat: no-repeat
+    background-position: -48px 0px
+    height: 424px
+    position: absolute
+    bottom: 0px
+    transition: 0.4s ease
+  &:hover > .paladin
+    background-image: url(../../img/pld_up.png)
+    transition: 0.4s ease
+  & p 
+    text-align: right
+    padding: 20px
+    text-transform: uppercase
+    font-weight: 800
+    font-size: 25px
+

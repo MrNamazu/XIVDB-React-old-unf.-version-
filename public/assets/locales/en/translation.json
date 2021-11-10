@@ -1,9 +1,13 @@
 {
-  "ffNews": "FFXIV News",
-  "ffEvent": "FFXIV Events",
-  "ffUpdates": "FFXIV Update",
-  "xivNews": "XIVDB.org News",
-  "xivUpdates": "XIVDB.org Update",
+  "ffNews": "FFXIV | News",
+  "ffEvent": "FFXIV | Events",
+  "ffUpdates": "FFXIV | Update",
+  "xivNews": "XIVDB | Patch Notes",
+  "xivUpdates": "XIVDB.org | Update",
+
+  "readmore": "Read more...",
+  "posted": "Posted",
+  "from": "from",
 
   "strength": "Strength",
   "vitality": "Vitality",

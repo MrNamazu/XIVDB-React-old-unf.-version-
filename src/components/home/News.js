@@ -1,84 +1,67 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect} from "react";
 import { Link } from 'react-router-dom';
-import { useTranslation } from "react-i18next";
 
-import NewsPost from './NewsPost' 
+import NewsPost from './NewsPost'
 
+/* const allCategories = ['All', 'xivUpdates', 'xivNews', 'ffUpdates', 'ffEvent', 'ffNews']; */
 
-
-const News = () => {
-  const { t } = useTranslation();
-  const [page, setPage] = useState(null);
-
+const News = ({ items }) => {
+  const [visible, setVisible] = useState(5)
+  const [menuitem, setMenuItem] = useState(items);
+  const [filter, setFilter] = useState("All")
 
   useEffect(() => {
-    const query = `
-    {
-      newsCollection(locale: "${t('lng2')}") {
-        items {
-          title
-          author
-          published
-          newsSummary
-          newscontent
-          titleimage {
-            url
-          }
-          contentfulMetadata {
-            tags {
-              id
-            }
-          }
-        }
-      }
+    setMenuItem(items)
+    if (filter === "All") {
+      setMenuItem(items)
+    } else if (filter === "FFXIVNews"){
+      const filteredData = items.filter(item => item.category === "FFXIVNews");
+      setMenuItem(filteredData)
+    } else if (filter === "FFXIVUpdates"){
+      const filteredData = items.filter(item => item.category === "FFXIVUpdates");
+      setMenuItem(filteredData)
+    } else if (filter === "FFXIVEvents"){
+      const filteredData = items.filter(item => item.category === "FFXIVEvents");
+      setMenuItem(filteredData)
+    } else if (filter === "XIVDBNews"){
+      const filteredData = items.filter(item => item.category === "XIVDBNews");
+      setMenuItem(filteredData)
+    } else if (filter === "XIVDBUpdates"){
+      const filteredData = items.filter(item => item.category === "XIVDBUpdates");
+      setMenuItem(filteredData)
     }
-    `
-    window
-      .fetch(`https://graphql.contentful.com/content/v1/spaces/awqpfsl6936e/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer vssdG69CD8Xc1GNWkvo611ZBqtwQ0h2OaKhDR4_fiqs`,
-        },
-        body: JSON.stringify({ query }),
-      })
-      .then((response) => response.json())
-      .then(({ data, errors }) => {
-        if (errors) {
-          console.error(errors);
-        }
-        setPage(data.newsCollection.items);
-      });
-  }, [t]);
-    
+  }, [items, setMenuItem, filter]);
 
-  const newsblocks = []
-  for (let i in page) {
-    newsblocks.push(
-        <NewsPost 
-          key={i} 
-          author={page[i].author} 
-          newssum={page[i].newsSummary} 
-          newstitle={page[i].title} 
-          newsimg={page[i].titleimage?.url} 
-          newscategory={page[i].contentfulMetadata?.tags[0].id}
-          date={page[i].published} 
-        />
-      )
+
+  const showMoreItems = () => {
+    setVisible((prevValue) => prevValue + 5)
   }
 
   return (
-  <div>
-    <div className="homeNewsSortBar">
-      <span>Sort News:</span>
-      <span><Link to="#"><button><i className="far fa-newspaper"></i> News</button></Link></span>
-      <span><Link to="#"><button><i className="fas fa-upload"></i> Updates</button></Link></span>
-      <span><Link to="#"><button><i className="fas fa-calendar-alt"></i> Events</button></Link></span>
-      <span><Link to="#"><button><i className="fas fa-list"></i> Patch Notes</button></Link></span>
-    </div>
-    {newsblocks}
-    <Link to="/" className="homeNewsLoadMoreNews"><button>Mehr Laden</button></Link>
-  </div>
+    <>
+      <div className="homeNewsSortBar">
+        <span>Sort News:</span>
+        <span><Link to="#"><button type="button" onClick={()=> setFilter("All")}><i className="fas fa-fire"></i> All</button></Link></span>
+        <span><Link to="#"><button type="button" onClick={()=> setFilter("FFXIVNews")}><i className="far fa-newspaper"></i> News</button></Link></span>
+        <span><Link to="#"><button type="button" onClick={()=> setFilter("FFXIVUpdates")}><i className="fas fa-upload"></i> Updates</button></Link></span>
+        <span><Link to="#"><button type="button" onClick={()=> setFilter("FFXIVEvents")}><i className="fas fa-calendar-alt"></i> Events</button></Link></span>
+        <span><Link to="#"><button type="button" onClick={()=> setFilter("XIVDBNews")}><i className="fas fa-list"></i> XIVDB News</button></Link></span>
+        <span><Link to="#"><button type="button" onClick={()=> setFilter("XIVDBUpdates")}><i className="fas fa-list"></i> XIVDB Updates</button></Link></span>
+      </div>
+      {menuitem?.slice(0, visible).map((item, i) => (
+        <NewsPost
+          key={i}
+          author={item.author}
+          newssum={item.newsSummary}
+          newstitle={item.title}
+          newsimg={item.titleimage?.url}
+          newscategory={item.category}
+          date={item.published}
+          link={item.title}
+        />
+      ))}
+      <Link to="#" className="homeNewsLoadMoreNews" onClick={showMoreItems}><button>Mehr Laden</button></Link>
+    </>
   )
 }
 

@@ -1,0 +1,32 @@
+.guideClassCard {
+  background-color: #20232a;
+  border: 5px solid #131418;
+  color: #eaac16;
+  width: 400px;
+  height: 200px;
+  border-radius: 13px;
+  margin-right: 20px;
+  filter: grayscale(0.8); }
+  .guideClassCard:hover {
+    filter: grayscale(0); }
+  .guideClassCard > .paladin {
+    background-image: url(../../img/pld_down.png);
+    width: 202px !important;
+    background-size: 223px;
+    background-repeat: no-repeat;
+    background-position: -48px 0px;
+    height: 424px;
+    position: absolute;
+    bottom: 0px;
+    transition: 0.4s ease; }
+  .guideClassCard:hover > .paladin {
+    background-image: url(../../img/pld_up.png);
+    transition: 0.4s ease; }
+  .guideClassCard p {
+    text-align: right;
+    padding: 20px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 25px; }
+
+/*# sourceMappingURL=guide.css.map */

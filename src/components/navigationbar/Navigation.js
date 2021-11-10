@@ -34,6 +34,9 @@ const Navigation = () => {
         <li className="nav-Item">
           <Link to="/database">{t("database")}</Link>
         </li>
+        <li className="nav-Item">
+          <Link to="/guides">{t("guides")}</Link>
+        </li>
         <li className="nav-lng" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
           <span><i className="fas fa-globe-americas" style={{marginRight:"5px"}}></i><i className="fas fa-caret-down"></i></span>
           {lngdrop && 

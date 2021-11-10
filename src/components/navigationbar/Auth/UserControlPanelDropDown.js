@@ -16,7 +16,7 @@ const UserControlPanelDropDown = () => {
   }
   return (
     <div className="ucpDropDown">
-      <Link to="#"><i className="fas fa-edit"></i> Profil bearbeiten</Link>
+      <Link to="/editprofile"><i className="fas fa-edit"></i> Profil bearbeiten</Link>
       <Link to="#"><i className="fas fa-cogs"></i> Einstellungen</Link>
       <Link to="#" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Abmelden</Link>
       {error && <div className="Error" variant="danger">{error}</div>}

@@ -74,7 +74,10 @@
       font-size: 12px;
       margin-right: 5px; }
     .homeNewsPost .homeNewsPostContent .homeNewsPostDesc {
-      margin-top: 10px; }
+      margin: 10px 0px 40px 0px;
+      height: calc(175px - 90px);
+      overflow: hidden;
+      text-align: justify; }
     .homeNewsPost .homeNewsPostContent button {
       position: absolute;
       bottom: 0;

@@ -8,7 +8,7 @@ import DatabaseReqirements from './DatabaseReqirements';
 import DatabaseGearscore from './DatabaseGearscore';
 import DatabaseItemName from './DatabaseItemName';
 import DatabaseStatMat from './DatabaseStatMat';
-/* import DatabaseLootTable from './DatabaseLootTable'; */
+import DatabaseLootTable from './DatabaseLootTable';
 import Loadingspinner from '../Loadingspinner';
 import DatabaseCraftingRecipe from './DatabaseCraftingRecipe'
 
@@ -43,7 +43,7 @@ const DatabaseContent = () => {
       <Loadingspinner />
     ) : (
       <>
-      {Data.GameContentLinks.Recipe?.["ItemResult"] !== undefined &&
+      {Data.GameContentLinks?.Recipe?.["ItemResult"] !== undefined &&
         <div className="databaseOptionsButtonBar"><button disabled>Im Herstellungssimulator öffnen</button><button disabled>Zur Herstellungsliste hinzufügen</button></div>
       }
 
@@ -66,9 +66,9 @@ const DatabaseContent = () => {
         </div>
         <DatabaseSidebar collectable={Data.IsCollectable} crest={Data.IsCrestWorthy} dyeable={Data.IsDyeable} glamour={Data.IsGlamourous} added={Data.GamePatch?.Name} />
       </div>
-      {/* <DatabaseLootTable/> */}
-      {Data.GameContentLinks.Recipe?.["ItemResult"] !== undefined &&
-        <DatabaseCraftingRecipe recipe={Data.GameContentLinks?.Recipe?.["ItemResult"]} />
+      <DatabaseLootTable/> 
+      {Data.GameContentLinks?.Recipe?.["ItemResult"] !== undefined &&
+        <DatabaseCraftingRecipe recipe={Data.GameContentLinks.Recipe?.["ItemResult"]} />
       }
     </>
   )
