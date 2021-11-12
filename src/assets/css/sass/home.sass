@@ -58,6 +58,7 @@ $fulldark: rgba(19,20,24,1)
     border: 5px solid $yellow
     transition: 0.2s ease
     background-size: cover
+    background-color: $dark
     & > span
       background-color: $yellow
       padding: 3px 10px
@@ -71,6 +72,7 @@ $fulldark: rgba(19,20,24,1)
     margin-left: 10px
     position: relative
     width: 100%
+    transition: 0.2s ease
     & > p
       font-weight: 600
       font-size: 17px
@@ -83,6 +85,37 @@ $fulldark: rgba(19,20,24,1)
       height: calc(175px - 90px)
       overflow: hidden
       text-align: justify
+      transition: 0.2s ease
+    & .homeNewsPostContent
+      transition: 0.2s ease
+      margin: 10px 0px 45px 0px
+      padding: 20px
+      background-color: $dark
+      & img
+        width: 80%
+        border: 5px solid $yellow
+        margin: 0 auto
+        display: block
+      & ol li
+        margin-left: 20px
+        font-weight: 500
+      & p, ol, hr , h1, h2, h3, h4, h5, h6
+        margin-bottom: 10px
+      & > p
+        font-weight: 500
+        text-transform: none
+        & > a 
+          font-weight: 600
+          color: $yellow
+          text-decoration: none
+          &:before
+            content: "\f0c1"
+            font-family: "FontAwesome"
+            text-decoration: none
+            font-size: 14px
+            margin-right: 5px
+          &:hover
+            text-decoration: underline
     & button 
       position: absolute
       bottom: 0
@@ -102,8 +135,8 @@ $fulldark: rgba(19,20,24,1)
   padding: 15px 12px
   border-radius: 5px
   width: 100%
-  color: #fff
   font-family: 'Montserrat', sans-serif
+  color: #fff
   font-size: 12px
   font-weight: 700
   cursor: pointer
@@ -136,3 +169,54 @@ $fulldark: rgba(19,20,24,1)
         margin-bottom: 5px
   .homeNewsPost .homeNewsPostContent button 
     position: unset
+
+
+blockquote
+  border-left: 3px solid $yellow
+  color: #ffffff
+  font-family: Georgia, Times, "Times New Roman", serif
+  font-style: italic
+  background-color: $fulldark
+  line-height: 1.8em
+  margin: 20px 5px
+  padding: 15px 20px
+  position: relative
+  transition: 0.2s border ease-in-out
+  z-index: 0
+  & > p
+    font-size: 16px
+  &:before
+    content: ""
+    position: absolute
+    top: 50%
+    left: -4px
+    height: 2em
+    background-color: $yellow
+    width: 5px
+    margin-top: -1em
+  &:after
+    content: "\f10e"
+    position: absolute
+    top: 50%
+    left: -0.5em
+    color: #FFF
+    font-family: "FontAwesome"
+    font-style: normal
+    line-height: 1em
+    text-align: center
+    text-indent: -2px
+    width: 1em
+    margin-top: -0.5em
+    transition: .2s all ease-in-out, .4s transform ease-in-out
+  &.format:before, &.format:after
+    display: none
+  &.book:after
+    content: "\f12e"
+  &.podcast:after
+    content: "\f32d"
+  &.lyrics:after
+    content: "\f333"
+  &.favorite:after
+    content: "\f384"
+  &:active:after
+    transform: rotateY(360deg)

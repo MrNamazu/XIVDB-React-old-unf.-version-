@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAMA,oBAAoB;EAClB,gBAAgB,EANX,OAAO;EAOZ,MAAM,EAAE,IAAI;EACZ,KAAK,EAAE,GAAG;EACV,QAAQ,EAAE,KAAK;EACf,KAAK,EAAE,CAAC;EACR,OAAO,EAAE,EAAE",
+"sources": ["../sass/craftinglist.sass"],
+"names": [],
+"file": "craftinglist.css"
+}

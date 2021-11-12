@@ -12,11 +12,11 @@ import DatabaseLootTable from './DatabaseLootTable';
 import Loadingspinner from '../Loadingspinner';
 import DatabaseCraftingRecipe from './DatabaseCraftingRecipe'
 
+
 const DatabaseContent = () => {
   const { name, id } = useParams();
   const [Data, setData] = useState([""]);
   const [isLoading, setIsLoading] = useState(true)
-
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -44,7 +44,10 @@ const DatabaseContent = () => {
     ) : (
       <>
       {Data.GameContentLinks?.Recipe?.["ItemResult"] !== undefined &&
-        <div className="databaseOptionsButtonBar"><button disabled>Im Herstellungssimulator öffnen</button><button disabled>Zur Herstellungsliste hinzufügen</button></div>
+        <div className="databaseOptionsButtonBar">
+          <button disabled>Im Herstellungssimulator öffnen</button>
+          <button>Zur Herstellungsliste hinzufügen</button>
+        </div>
       }
 
       <div className="databaseMainContentWrapper">

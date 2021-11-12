@@ -1,0 +1,91 @@
+.profileTabMenu {
+  display: flex; }
+  .profileTabMenu > div {
+    margin-right: 5px;
+    background-color: #131418;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-bottom: 3px solid #eaac16;
+    font-weight: 700;
+    text-transform: uppercase; }
+
+.profileTabMenuContent {
+  border: 1px solid #131418;
+  padding: 20px; }
+
+.profileSettingContainer {
+  background-color: #20232a;
+  padding: 20px; }
+
+.profileSyncCharacterContainer {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #2a2e36;
+  padding: 20px; }
+  .profileSyncCharacterContainer > div > p {
+    font-size: 14px;
+    margin: 5px 0px;
+    font-weight: 600; }
+    .profileSyncCharacterContainer > div > p a {
+      color: #eaac16; }
+    .profileSyncCharacterContainer > div > p > img {
+      width: 100%;
+      margin: 5px 0px;
+      border: 3px solid #eaac16; }
+  .profileSyncCharacterContainer hr {
+    margin: 20px 0px; }
+  .profileSyncCharacterContainer .profileSyncCharacterTutorial {
+    display: flex;
+    align-items: center; }
+    .profileSyncCharacterContainer .profileSyncCharacterTutorial > h5 {
+      margin-right: 5px; }
+    .profileSyncCharacterContainer .profileSyncCharacterTutorial > button {
+      margin-top: 0px !important; }
+  .profileSyncCharacterContainer .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px; }
+    .profileSyncCharacterContainer .form-group label {
+      margin-bottom: 5px; }
+    .profileSyncCharacterContainer .form-group input {
+      background-color: #131418;
+      border: 3px solid #20232a;
+      border-radius: 5px;
+      padding: 10px;
+      outline: none;
+      color: #FFF;
+      transition: 0.2s ease; }
+      .profileSyncCharacterContainer .form-group input:focus {
+        border: 3px solid #eaac16;
+        color: #eaac16;
+        transition: 0.2s ease; }
+  .profileSyncCharacterContainer .btn {
+    margin-top: 10px; }
+
+.profileDOHLevel {
+  margin-top: 40px;
+  border: 3px solid #131418;
+  width: 300px; }
+  .profileDOHLevel .form-group {
+    background-color: #2a2e36;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .profileDOHLevel .form-group:nth-child(2n) {
+      background-color: #20232a; }
+    .profileDOHLevel .form-group label {
+      margin-right: 5px; }
+      .profileDOHLevel .form-group label::after {
+        content: ": "; }
+    .profileDOHLevel .form-group > input {
+      width: 50px;
+      background-color: #2a2e36;
+      border: 3px solid #131418;
+      padding: 5px;
+      border-radius: 10px; }
+
+.profileSubmitButtonBar {
+  margin-top: 10px; }
+
+/*# sourceMappingURL=profilesettings.css.map */

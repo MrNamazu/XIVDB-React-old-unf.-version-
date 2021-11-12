@@ -57,7 +57,7 @@ const News = ({ items }) => {
           newsimg={item.titleimage?.url}
           newscategory={item.category}
           date={item.published}
-          link={item.title}
+          content={item.newscontent}
         />
       ))}
       <Link to="#" className="homeNewsLoadMoreNews" onClick={showMoreItems}><button>Mehr Laden</button></Link>

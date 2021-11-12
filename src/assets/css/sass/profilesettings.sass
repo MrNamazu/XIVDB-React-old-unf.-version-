@@ -1,0 +1,106 @@
+$yellow: #eaac16
+$dark: #20232a
+$light: #2a2e36
+$fulldark: rgba(19,20,24,1)
+
+
+
+.profileTabMenu
+  display: flex
+  & > div
+    margin-right: 5px
+    background-color: $fulldark
+    padding: 10px 20px
+    cursor: pointer
+    border-bottom: 3px solid $yellow
+    font-weight: 700
+    text-transform: uppercase
+
+.profileTabMenuContent
+  border: 1px solid $fulldark
+  padding: 20px
+
+
+
+
+
+
+
+
+
+
+.profileSettingContainer
+  background-color: $dark
+  padding: 20px
+
+.profileSyncCharacterContainer
+  width: 500px
+  margin: 0 auto
+  background-color: $light
+  padding: 20px
+  & > div > p
+    font-size: 14px
+    margin: 5px 0px
+    font-weight: 600
+    & a 
+      color: $yellow
+    & > img
+      width: 100%
+      margin: 5px 0px
+      border: 3px solid $yellow
+  & hr 
+    margin: 20px 0px
+  & .profileSyncCharacterTutorial
+    display: flex
+    align-items: center
+    & > h5 
+      margin-right: 5px
+    & > button 
+      margin-top: 0px !important
+  & .form-group
+    display: flex
+    flex-direction: column
+    margin-bottom: 10px
+    & label
+      margin-bottom: 5px
+    & input
+      background-color: $fulldark
+      border: 3px solid $dark
+      border-radius: 5px
+      padding: 10px
+      outline: none
+      color: #FFF
+      transition: 0.2s ease
+      &:focus
+        border: 3px solid $yellow
+        color: $yellow
+        transition: 0.2s ease
+  & .btn
+    margin-top: 10px
+
+
+
+.profileDOHLevel
+  margin-top: 40px
+  border: 3px solid $fulldark
+  width: 300px
+  & .form-group
+    background-color: $light
+    padding: 5px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &:nth-child(2n)
+      background-color: $dark
+    & label
+      margin-right: 5px
+      &::after
+        content: ": "
+    & > input
+      width: 50px
+      background-color: $light
+      border: 3px solid $fulldark
+      padding: 5px
+      border-radius: 10px
+.profileSubmitButtonBar
+  margin-top: 10px

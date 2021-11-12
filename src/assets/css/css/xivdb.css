@@ -11,53 +11,25 @@ body {
   font-family: "Montserrat";
   color: #FFF; }
 
-.Error {
-  background-color: #462628;
-  border: 3px solid #8f2a34;
-  padding: 10px 10px;
-  display: flex;
-  align-items: center;
-  margin: 10px 0px;
-  font-size: 14px; }
-  .Error:before {
-    content: "";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 30px;
-    margin-right: 20px;
-    color: #8f2a34; }
-
-.Success {
-  background-color: #305742;
-  border: 3px solid #3c9e4c;
-  padding: 10px 10px;
-  display: flex;
-  align-items: center;
-  margin: 10px 0px;
-  font-size: 14px; }
-  .Success:before {
-    content: "";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 30px;
-    margin-right: 20px;
-    color: #3c9e4c; }
-
-.Warning {
-  background-color: #574d30;
-  border: 3px solid #9e8c3c;
-  padding: 10px 10px;
-  display: flex;
-  align-items: center;
-  margin: 10px 0px;
-  font-size: 14px; }
-  .Warning:before {
-    content: "";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    font-size: 30px;
-    margin-right: 20px;
-    color: #9e8c3c; }
+.btn {
+  background-color: #20232a;
+  border: 0px none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease; }
+  .btn:hover:enabled {
+    background-color: #eaac16 !important;
+    color: #20232a;
+    transition: 0.2s ease; }
+  .btn:disabled {
+    opacity: 0.3;
+    color: #6e6e6e;
+    text-decoration-line: line-through; }
 
 .LoadingScreen {
   color: #FFF;
@@ -124,7 +96,7 @@ body {
     transform: rotate(359deg); } }
 /* HEADER */
 .st0 {
-  fill: #20232a; }
+  fill: #20232a !important; }
 
 #Ebene_1 {
   height: 400px; }

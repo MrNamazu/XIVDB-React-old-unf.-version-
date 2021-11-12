@@ -3,6 +3,7 @@ $dark: #20232a
 $light: #2a2e36
 $fulldark: rgba(19,20,24,1)
 
+
 *
   margin: 0
   padding: 0 
@@ -15,53 +16,25 @@ body
   font-family: 'Montserrat'
   color: #FFF
 
-.Error
-  background-color: #462628
-  border: 3px solid #8f2a34
-  padding: 10px 10px
-  display: flex
-  align-items: center
-  margin: 10px 0px
-  font-size: 14px
-  &:before
-    content: "\f057"
-    font-family: "Font Awesome 5 Free"
-    font-weight: 900
-    font-size: 30px
-    margin-right: 20px
-    color: #8f2a34
-.Success
-  background-color: #305742
-  border: 3px solid #3c9e4c
-  padding: 10px 10px
-  display: flex
-  align-items: center
-  margin: 10px 0px
-  font-size: 14px
-  &:before
-    content: "\f058"
-    font-family: "Font Awesome 5 Free"
-    font-weight: 900
-    font-size: 30px
-    margin-right: 20px
-    color: #3c9e4c
-.Warning
-  background-color: #574d30
-  border: 3px solid #9e8c3c
-  padding: 10px 10px
-  display: flex
-  align-items: center
-  margin: 10px 0px
-  font-size: 14px
-  &:before
-    content: "\f06a"
-    font-family: "Font Awesome 5 Free"
-    font-weight: 900
-    font-size: 30px
-    margin-right: 20px
-    color: #9e8c3c
-
-
+.btn
+  background-color: $dark
+  border: 0px none
+  padding: 8px 12px
+  border-radius: 5px
+  color: #fff
+  font-family: 'Montserrat', sans-serif
+  font-size: 12px
+  font-weight: 700
+  cursor: pointer
+  transition: 0.2s ease
+  &:hover:enabled
+    background-color: $yellow !important
+    color: $dark
+    transition: 0.2s ease
+  &:disabled
+    opacity: 0.3
+    color: #6e6e6e
+    text-decoration-line: line-through
 
 .LoadingScreen 
   color: #FFF
@@ -128,7 +101,7 @@ body
 /* HEADER */
 
 .st0 
-  fill: $dark
+  fill: $dark !important
 #Ebene_1
   height: 400px
 

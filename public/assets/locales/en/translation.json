@@ -1,9 +1,9 @@
 {
-  "ffNews": "FFXIV | News",
-  "ffEvent": "FFXIV | Events",
-  "ffUpdates": "FFXIV | Update",
-  "xivNews": "XIVDB | Patch Notes",
-  "xivUpdates": "XIVDB.org | Update",
+  "FFXIVNews": "FFXIV | News",
+  "FFXIVEvents": "FFXIV | Events",
+  "FFXIVUpdates": "FFXIV | Updates",
+  "XIVDBNews": "XIVDB.org | News",
+  "XIVDBUpdates": "XIVDB.org | Updates",
 
   "readmore": "Read more...",
   "posted": "Posted",

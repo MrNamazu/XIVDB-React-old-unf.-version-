@@ -24,7 +24,7 @@ export function AuthProvider({ children }) {
   }
 
   function logout() {
-    return signOut(auth);
+    return signOut(auth)
   }
 
   useEffect(() => {

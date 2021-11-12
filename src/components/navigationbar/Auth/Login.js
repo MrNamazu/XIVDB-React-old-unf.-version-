@@ -1,5 +1,7 @@
 import React, { useRef, useState } from "react"
 import { useAuth } from "./Context/AuthContext"
+import { toast } from 'react-toastify';
+
 
 import "../../../assets/css/css/login-register.css"
 
@@ -7,8 +9,6 @@ const Login = ({ openModal }) => {
   const emailRef = useRef()
   const passwordRef = useRef()
   const { login } = useAuth()
-  const [error, setError] = useState("")
-  const [success, setSuccess] = useState("")
   const [loading, setLoading] = useState(false)
 
 
@@ -17,13 +17,30 @@ const Login = ({ openModal }) => {
     e.preventDefault()
 
     try {
-      setError("")
-      setSuccess("")
       setLoading(true)
       await login(emailRef.current.value, passwordRef.current.value)
       document.body.style.overflow = 'unset';
+      toast.success('Du hast dich erfolgreich eingeloggt!', {
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
+      toast.warning('Um XIVDB.org im vollen Umfang nutzen zu können, solltest du deinen Ingame-Charakter mit XIVDB verbinden. Gehe dazu in deine Profil Einstelungen und folge der Anleitung.', {
+        autoClose: false,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+      });
     } catch {
-      setError("Failed to log in")
+      toast.error('Login fehlgeschlagen', {
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      })
     }
 
     setLoading(false)
@@ -41,10 +58,6 @@ const Login = ({ openModal }) => {
         <button onClick={CloseLogin}><i class="fas fa-times"></i></button>
         <div className="LoginForm">
           <h1>Login</h1>
-
-          {success && <p className="Success">{success}</p>}
-          {error && <p className="Error">{error}</p>}
-
             <div className="form-group">
               <label>E-mail :</label>
               <input

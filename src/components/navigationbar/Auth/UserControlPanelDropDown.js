@@ -1,25 +1,34 @@
-import React, { useState } from "react"
+import React from "react"
 import { useAuth } from './Context/AuthContext'
 import { Link } from "react-router-dom"
+import { toast } from 'react-toastify';
 
 const UserControlPanelDropDown = () => {
-  const [error, setError] = useState("")
   const { logout } = useAuth()
 
   async function handleLogout() {
-    setError("")
     try {
       await logout()
+      toast.success('Du hast dich erfolgreich ausgeloggt!', {
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      });
     } catch {
-      setError("Failed to log out")
+      toast.error('Logout fehlgeschlagen', {
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        progress: undefined,
+      })
     }
   }
   return (
     <div className="ucpDropDown">
-      <Link to="/editprofile"><i className="fas fa-edit"></i> Profil bearbeiten</Link>
-      <Link to="#"><i className="fas fa-cogs"></i> Einstellungen</Link>
+      <Link to="/listsettings"><i class="fas fa-stream"></i> Craftinglisten</Link>
+      <Link to="/editprofile"><i className="fas fa-cogs"></i> Profil Einstellungen</Link>
       <Link to="#" onClick={handleLogout}><i className="fas fa-sign-out-alt"></i> Abmelden</Link>
-      {error && <div className="Error" variant="danger">{error}</div>}
     </div>
   )
 }

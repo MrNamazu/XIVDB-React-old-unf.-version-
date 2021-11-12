@@ -7,7 +7,7 @@ import '../../assets/css/css/navigation.css';
 
 const NavigationBar = () => {
   return (
-    <nav>
+    <nav className="Navigation">
       <div className='wrapper'>
         <Navigation />
         <UserControlPanel />

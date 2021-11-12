@@ -10,6 +10,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import editprofile from "./pages/editprofile"
 import guides from "./pages/guides"
+import listsettings from "./pages/listsettings"
 import { AuthProvider } from "./components/navigationbar/Auth/Context/AuthContext"
 
 const XIVDatabase = () => {
@@ -27,6 +28,7 @@ const XIVDatabase = () => {
                   <Route path="/database" component={Database} />
                   <Route exact path="/guides" component={guides} />
                   <PrivateRoute exact path="/editprofile" component={editprofile} />
+                  <PrivateRoute exact path="/listsettings" component={listsettings} />
                   
                   <Route exact path="/PageNotFound" component={PageNotFound} />
                   <Redirect to="/PageNotFound" />
